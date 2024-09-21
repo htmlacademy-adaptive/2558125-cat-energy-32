@@ -1,0 +1,111 @@
+.main-header {
+  @media (min-width: $desktop-width-base) {
+    padding-bottom: 162px;
+  }
+
+  @media (min-width: $desktop-width-base) {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: ($tablet-width-base - 1)) {
+  .page__body--regular .main-header {
+    border-bottom: 1px solid $footer-separator;
+  }
+}
+
+@media (max-width: ($tablet-width-base - 1)) {
+  .main-header__logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 13px 21px 14px 20px;
+    align-items: center;
+  }
+}
+
+.main-header__logo-text-link,
+.main-header__logo-image-link {
+  line-height: 0;
+  display: block;
+
+  &:hover {
+    opacity: 80%;
+  }
+
+  &:active {
+    opacity: 60%;
+  }
+}
+
+.main-header__top {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media (min-width: $tablet-width-base) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-left: $tablet-padding-base;
+    padding-right: 34px;
+    align-items: flex-end;
+  }
+
+  @media (min-width: $desktop-width-base) {
+    padding-left: $desktop-padding-base;
+    padding-right: $desktop-padding-base;
+    padding-top: 55px;
+  }
+}
+
+.main-header__navigation-toggle {
+  position: relative;
+  font-size: 0;
+  background: 0;
+  border: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: none;
+
+  @media (max-width: ($tablet-width-base - 1)) {
+    display: block;
+  }
+}
+
+.main-header__navigation-toggle--close {
+  width: 24px;
+  height: 18px;
+  padding-left: 6px;
+}
+
+.main-header__navigation-toggle::after {
+  top: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  mask-size: 24px 24px;
+  mask-image: url("../../icons/menu_icon.svg");
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.main-header__navigation-toggle--close::after {
+  mask-image: url("../../icons/menu_close.svg");
+  height: 18px;
+  mask-size: 18px 18px;
+  mask-position: right;
+  mask-repeat: no-repeat;
+}
+
+.main-header__logo-text {
+  display: none;
+
+  @media (max-width: ($tablet-width-base - 1)) {
+    display: block;
+    padding-right: 7px;
+  }
+}
